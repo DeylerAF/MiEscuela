@@ -53,5 +53,17 @@ namespace MiEscuela
 
         }
         #endregion
+
+        #region Constructor
+        public Empleado()
+        {
+            this.Activo = true;
+        }
+        public Empleado(string Nombre)
+        {
+            Nombre = nombre;
+            this.Activo = true;
+        }
+        #endregion
     }
 }

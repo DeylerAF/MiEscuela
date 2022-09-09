@@ -30,14 +30,46 @@ namespace MiEscuela
             return resp;
         }
 
-        public string DarDeBaja()
+        public string DarDeBaja(string motivo = "")
         {
             this.Estatus = false;
-            //Editar en BD el registro en
-            //EditarRegistroEnBD()
-            string respuesta = "Alumno dado de baja";
+            //Editar en BD el registro, agregar motivo
+            string respuesta = "";
+            if (motivo != "")
+            {
+                respuesta = "Alumno dado de baja. Motivo " + motivo;
+            }
+            else
+            {
+                respuesta = "Alumno dado de baja";
+            }
+
             return respuesta;
+        }
+
+        public void DarDeBaja(string cveUsuario, string pwd, string motivo)
+        {
+            //Consultar que el usuario cuente con los permisos requeridos
+            //VerificarUsuario(cveUsuario, pwd)
+            //Si usuario verificado :
+            //Eliminar el registro del estudiante
+            //Guardar el movimiento en un log
+        }
+        #endregion
+
+        #region Constructor
+        public Estudiante(string nombre, string gradoGrupo)
+        {
+            this.nombre = nombre;
+            GradoGrupo = gradoGrupo;
+        }
+        public Estudiante(bool estatus)
+        {
+            Estatus = estatus;
+            Nombre = "";
         }
         #endregion
     }
+
+
 }

@@ -20,6 +20,10 @@ namespace MiEscuela
             {
                 return matr + "_2017";
             }
+            set
+            {
+                this.matr = value;
+            }
         }
         public Materia Materia { get; set; }
         #endregion
@@ -37,6 +41,14 @@ namespace MiEscuela
 
         {
             Materia = materia;
+        }
+        #endregion
+
+        #region Constructor
+        public Profesor()
+        {
+            this.Matr = "_2017";
+            this.Activo = true;
         }
         #endregion
     }

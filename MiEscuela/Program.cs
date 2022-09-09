@@ -8,10 +8,14 @@ namespace MiEscuela
     }
     class Program : MiClasePrueba
     {
-        public static void ImprimirMensajeEnPantalla( string mensaje)
+        public static void ImprimirMensajeEnPantalla( string mensaje, bool guardar = false)
         {
             Console.WriteLine("Respuesta del sistema: ");
             Console.WriteLine(mensaje);
+            if (guardar)
+            {
+                //Guardar en BD el mensaje
+            }
         }
         /*public static void ImprimirMensajePrueba()
         {
@@ -22,6 +26,15 @@ namespace MiEscuela
             Console.Title = "Sistema de administracion escolar";
             Profesor prof = new Profesor();
             string resp = prof.Checar();
+
+            string nombreEstudiante = "Pepito";
+            string gradoGrupo = "5A";
+            Estudiante estudiante = new Estudiante(nombreEstudiante, gradoGrupo);
+            estudiante = null;
+            
+            // Materia miMateria = new Materia();
+            //Program miProgram = new Program();
+
             ImprimirMensajeEnPantalla(resp);
             
             Console.WriteLine("Preciona 0 para mostrar mensaje de prueba");
